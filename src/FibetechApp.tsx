@@ -1,9 +1,12 @@
+import { TransitionProvider } from "./context/Transition/TransitionProvider";
 import { MainRouter } from "./router/mainRouter";
 
 export const FibetechApp = () => {
   return (
     <>
-      <MainRouter />
+      <TransitionProvider>
+        <MainRouter />
+      </TransitionProvider>
     </>
   );
 };

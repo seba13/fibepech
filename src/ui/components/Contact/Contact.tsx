@@ -1,23 +1,13 @@
-import { Facebook, Instagram, PhoneCall } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 
 export const Contact = () => {
   return (
-    <div className="contact-container">
+    <div className={`flex col-gap-1`} style={{ color: "var(--text-color)" }}>
       {/* social media */}
-      <div className="social-media">
-        <a>
-          <Instagram size={20} style={{ color: "var(--icon-color)" }} />
-        </a>
-
-        <a>
-          <Facebook size={20} style={{ color: "var(--icon-color)" }} />
-        </a>
-      </div>
-
-      <div className="row-center">
-        <PhoneCall size={20} style={{ color: "var(--icon-color)" }} />
-        <span> +5699999999</span>
-      </div>
+      <a href="tel:+5699999999" className="link link--primary phone-container">
+        <PhoneCall className="icon-media" />
+        <span>+56 9 9999 9999</span>
+      </a>
     </div>
   );
 };

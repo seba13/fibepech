@@ -1,6 +1,6 @@
-import type { IMenuItems } from "./types";
+import type { IMenuItem } from "./types";
 
-export const menuItems: IMenuItems[] = [
+export const menuItems: IMenuItem[] = [
   {
     id: "1",
     title: "Inicio",

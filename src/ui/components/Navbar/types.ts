@@ -1,18 +1,13 @@
-import type { IMenuItems } from '../../constants/types';
-
-
-
+import type { IMenuItem } from "../../constants/types";
 
 export interface NavbarProps {
-  menuItems : IMenuItems[]
+  menuItems: IMenuItem[];
 }
 
-
-
 export interface MobileMenuProps {
-  menuItems : IMenuItems[]
+  menuItems: IMenuItem[];
 }
 
 export interface DesktopMenuProps {
-  menuItems : IMenuItems[]
+  menuItems: IMenuItem[];
 }
