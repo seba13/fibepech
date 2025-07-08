@@ -47,13 +47,21 @@
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   min-height: 100dvh;
   font-family: "poppins";
   background-color: var(--color-brown-400);
+}
+
+body.menu-open {
+  overflow: hidden; /* Elimina el scroll */
+  position: fixed; /* Opcional: evita el salto del contenido */
+  width: 100%; /* Mantiene el ancho */
+  height: 100%; /* Mantiene el alto */
+  touch-action: none; /* Deshabilita gestos táctiles */
 }
 
 .static-container {
@@ -125,7 +133,7 @@ body {
 }
 
 .desktop-menu.scrolled {
-  background-color: #472F22A2;
+  background-color: #472f22a2;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -145,6 +153,7 @@ body {
 }
 
 .nav-placeholder {
+  transition: height 0.25s;
   height: var(--nav-height); /* Usamos variable CSS para sincronizar alturas */
 }
 
@@ -264,8 +273,8 @@ svg {
   justify-content: space-between;
   flex-grow: 1;
   flex-shrink: 0;
-  height: 100%;
-  max-height: 80%;
+  /* height: 100dvh; */
+  height: 80dvh;
   /* align-items: flex-end; */
 }
 
@@ -294,21 +303,28 @@ svg {
       justify-content: flex-end;
       flex-grow: 1; */
       /* row-gap: 2rem; */
-      max-width: min(60%, 800px);
+      max-width: 700px;
       position: relative;
       z-index: 1;
     }
 
     & .img-carrusel-item {
+      width: 100%;
       position: absolute;
       bottom: 0;
-      right: 0;
+      left: 0;
       z-index: 0;
       max-height: 100%;
+      display: flex;
+      min-width: 600px;
+      justify-content: flex-end;
+
       img {
         object-fit: contain;
-        width: 100%;
+        width: 650px;
+        /* width: 100%;
         max-width: 650px;
+        height: 100%; */
         height: 100%;
         display: block;
       }
@@ -352,8 +368,8 @@ svg {
   border-radius: 2rem;
   /* min-height: min(100%, 900px); */
   background-color: var(--color-brown-100);
-
-  ::before {
+  overflow: hidden;
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -371,14 +387,25 @@ svg {
   height: 100%;
   column-gap: 2rem;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .card {
   border-radius: 1rem;
   flex-shrink: 0;
   width: 350px;
+  height: 500px;
   /* height: min(90%, 500px); */
+  transition: transform 0.25s ease;
+  user-select: none; /* Bloquea la selección de texto */
+  -webkit-user-select: none; /* Para navegadores basados en WebKit (Safari/Chrome) */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none;
+
+  &:hover {
+    transform: scale(1.02);
+    background: inherit;
+  }
 
   & .card-list-item {
     max-width: 100%;
@@ -388,6 +415,97 @@ svg {
 .card-text {
   background-color: var(--color-red-600);
   border-radius: 1rem;
+  min-width: 500px;
+}
+
+.mobile-hamburger {
+  width: 24px;
+  height: 24px;
+  padding-bottom: 4px;
+  background-color: transparent;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 200;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--color-red-50);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+
+    &:nth-child(1) {
+      top: 10%;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:nth-child(3) {
+      bottom: 10%;
+    }
+  }
+
+  &.active {
+    transition: all 0.3s ease;
+
+    & span {
+      &:nth-child(1) {
+        top: 50%;
+        /* transform: translateY(-50%); */
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+        /* transform: translateY(50%); */
+        /* animation: bar-menu-2 0.3s 0.3s ease forwards; */
+      }
+    }
+  }
+}
+
+.mobile-menu-overlay {
+  /* background-color: lab(0 0 0 / 0.5); */
+  background-color: rgb(28, 17, 11, 60%);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.35s ease;
+  pointer-events: none;
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.mobile-menu {
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  transform: translateX(-100%);
+  /* background-color: lab(0 0 0 / 0.5); */
+
+  background-color: #E1AD94;
+
+  transition: transform 0.25s ease;
+  &.active {
+    transform: translateX(-20%);
+  }
 }
 
 /* CarruselItem.css */
@@ -438,11 +556,23 @@ svg {
 
 @keyframes fadeIn {
   from {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease-in forwards;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .card-text {
+    min-width: 0;
   }
 }

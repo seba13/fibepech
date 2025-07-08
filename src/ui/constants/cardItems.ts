@@ -21,7 +21,7 @@ export const cardItems: ICardItem[] = [
     id: "2",
     title: "Cursos, talleres y servicios de Masoterapia",
     list: [
-      "Masajes de relajación",
+      "Masajes de rela2jación",
       "Drenajes linfáticos",
       "Masajes cérvico craneal",
       "Terapia de imanes",
@@ -80,6 +80,6 @@ export const cardItems: ICardItem[] = [
       "Ornamentación de pastelería",
       "Cocina institucional",
     ],
-    image: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//Confectionery-1.webp",
+    image: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//Confectionery-4.webp",
   },
 ];

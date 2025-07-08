@@ -16,11 +16,11 @@
   --color-red-300: #ed9e9f;
   --color-red-400: #e97a7b;
   --color-red-500: #e74e4f;
-  --color-red-600: #C73839;
-  --color-red-700: #9F2B2C;
-  --color-red-800: #6D1B1B;
-  --color-red-900: #410C0C;
-  --color-red-950: #160C07;
+  --color-red-600: #c73839;
+  --color-red-700: #9f2b2c;
+  --color-red-800: #6d1b1b;
+  --color-red-900: #410c0c;
+  --color-red-950: #160c07;
   --color-steel-blue-50: #ebf5f9;
   --color-steel-blue-100: #d6ecf3;
   --color-steel-blue-200: #afdce8;
@@ -658,6 +658,30 @@
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.shrink-1 {
+  flex-shrink: 1;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 
 .text-center {

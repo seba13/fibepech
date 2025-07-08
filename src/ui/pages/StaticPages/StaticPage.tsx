@@ -9,7 +9,7 @@ import { Footer } from "../../views/Footer/Footer";
 
 export const StaticPage = () => {
   return (
-    <div>
+    <div className="fade-in">
       <div
         id="home"
         className="static-container"

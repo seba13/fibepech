@@ -1,12 +1,20 @@
 import { CardText } from "../../../components/CardText/CardText";
 import Typography from "../../../components/Typography/Typhography";
+// import useDeviceDetect from "../../../hooks/useDeviceDetect";
+import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
 
 export const About = () => {
+  // const { isMobile } = useDeviceDetect();
+  const { paddingHorizontal, paddingVertical } = useDeviceStyles();
   return (
     <div
       id="about"
-      className="px-4 py-3 flex flex-col row-gap-2"
+      className={`
+      ${paddingHorizontal}
+      ${paddingVertical}
+      flex flex-col row-gap-2`}
       style={{
+        minWidth: 250,
         backgroundColor: "var(--color-red-800)",
       }}
     >
@@ -26,7 +34,13 @@ export const About = () => {
         </Typography>
       </div>
 
-      <div className="flex col-gap-4 justify-between">
+      <div
+        className="flex row-gap-2 col-gap-4 justify-between"
+        style={{
+          flexWrap: "wrap",
+          maxWidth: "100%",
+        }}
+      >
         <CardText style={{ maxWidth: 700 }}>
           <div className="flex flex-col row-gap-1">
             <Typography variant="h1" className="color-primary">

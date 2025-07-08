@@ -3,16 +3,21 @@ import Typography from "../../../components/Typography/Typhography";
 import { Contact } from "../../components/Contact/Contact";
 import { MapGoogle } from "../../components/MapGoogle/MapGoogle";
 import { SocialMedia } from "../../components/SocialMedia/SocialMedia";
+import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
 
 export const Footer = () => {
+  const { paddingHorizontal, paddingTop, paddingVertical } = useDeviceStyles();
+
   return (
     <div
       className="text-color"
       style={{ backgroundColor: "var(--color-brown-950)" }}
     >
-      <div className="flex-grow flex px-4 py-3 pb-1 justify-center col-gap-3">
+      <div
+        className={`flex ${paddingHorizontal} ${paddingTop} pb-1  justify-start col-gap-3 row-gap-3 flex-wrap`}
+      >
         <div
-          className="flex-grow"
+          className="flex-grow-1"
           style={{
             height: 350,
             maxWidth: 700,
@@ -31,10 +36,10 @@ export const Footer = () => {
             <Typography>FIBEPECH@GMAIL.COM</Typography>
           </div>
 
-          <div className="flex flex-col row-gap-0-5 pb-1">
+          <div className="flex flex-col row-gap-0-5 pb-1 ">
             <Typography variant="h3">Visítanos</Typography>
 
-            <div className="flex items-center">
+            <div className="flex items-center col-gap-0-5">
               <MapPin className="icon-media" />
               <Typography>
                 Av. Gomez Carreño 666, Belloto norte, Quilpue
@@ -75,7 +80,9 @@ export const Footer = () => {
           borderTop: "1px solid #fff",
         }}
       >
-        <div className="px-4 py-1 flex justify-end">
+        <div
+          className={`${paddingHorizontal} ${paddingVertical} flex justify-end`}
+        >
           <Typography>FIBEPECH® 2025 Todos los derechos reservados.</Typography>
         </div>
       </div>
