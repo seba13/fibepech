@@ -16,4 +16,14 @@ export const menuItems: IMenuItem[] = [
     title: "Sobre nosotros",
     to: "#about",
   },
+  {
+    id: "4",
+    title: "Galería",
+    to: "#gallery",
+  },
+  // {
+  //   id: "5",
+  //   title: "Contacto",
+  //   to: "#contact",
+  // },
 ];

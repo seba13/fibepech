@@ -1,12 +1,13 @@
 import Typography from "../../../../../components/Typography/Typhography";
-// import useDeviceDetect from "../../../../../hooks/useDeviceDetect";
+import useDeviceDetect from "../../../../../hooks/useDeviceDetect";
 import { useDeviceStyles } from "../../../../../hooks/useDeviceStyles";
 import { Button } from "../../../Button/Button";
 import type { CarruselItemProps } from "../../types";
 
 export const CarruselItem = ({ item }: CarruselItemProps) => {
-  // const { isMobile } = useDeviceDetect();
-  const { paddingLeft, paddingBottom, marginBottom } = useDeviceStyles();
+  const { isMobile } = useDeviceDetect();
+  const { paddingLeft, paddingVertical, marginBottom } = useDeviceStyles();
+
   return (
     <div
       className={`
@@ -14,26 +15,24 @@ export const CarruselItem = ({ item }: CarruselItemProps) => {
     `}
     >
       <div
-        className={`carrusel-header-item ${paddingLeft} ${paddingBottom}`}
-        style={
-          {
-            // backgroundImage: `url(${item.image})`,
-            // backgroundSize: isMobile ? "auto 100%" : "auto 100%",
-            // backgroundRepeat: "no-repeat",
-            // backgroundPosition: isMobile ? "right bottom" : "right bottom",
-            // // Para asegurar que la imagen siempre cubra el ancho necesario en móviles
-            // ...(isMobile && {
-            //   backgroundPositionX: "60%", // Ajusta este valor según necesites
-            //   backgroundSize: "100% auto" // O "contain" dependiendo del efecto deseado
-            // })
-          }
-        }
+        className={`carrusel-header-item ${paddingLeft} ${paddingVertical}`}
+        style={{
+          backgroundImage: `url(${item.image})`,
+          backgroundSize: isMobile ? "auto 100%" : "auto 100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right",
+          ...(isMobile && {
+            backgroundPosition: "100% 100%",
+            backgroundSize: "auto 70%",
+            backgroundImage: `url(${item.image}) `,
+          }),
+        }}
       >
-        <div
+        {/* <div
           className="img-carrusel-item"
           style={{
             // transform: `translateX(${isMobile ? "20%" : "100px"})`,
-            transform: `translateX(100px)`,
+            transform: `translateX(0px)`,
           }}
         >
           <img
@@ -41,11 +40,11 @@ export const CarruselItem = ({ item }: CarruselItemProps) => {
             src={item.image}
             alt={item.alt}
           />
-        </div>
+        </div> */}
 
         <div className="flex flex-col info-carrusel-item">
           <Typography
-            variant="header"
+            variant="h1"
             className="mb-1"
             style={{
               color: item.colorPrimary,

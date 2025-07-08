@@ -3,14 +3,15 @@ import { Card } from "../../../components/Card/Card";
 import Typography from "../../../components/Typography/Typhography";
 import { cardItems } from "../../constants/cardItems";
 import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
+import { GraduationCap } from "lucide-react";
 
 // Ajustes mejorados
-const FRICTION = 0.85; // Mayor fricción para frenar más rápido
+const FRICTION = 0.95; // Mayor fricción para frenar más rápido
 const MAX_VELOCITY = 30; // Velocidad máxima permitida
 const CONTAINER_PADDING = 16; // Padding del contenedor (ajustar según tu CSS)
 
 export const Courses = () => {
-  const { paddingLeft, paddingVertical } = useDeviceStyles();
+  const { paddingLeft, paddingVertical, isMobile } = useDeviceStyles();
 
   const refContainer = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
@@ -151,13 +152,13 @@ export const Courses = () => {
         bounds.max
       );
 
-      // Rebote suave cuando alcanza los límites
-      if (
-        translateXRef.current >= bounds.max ||
-        translateXRef.current <= bounds.min
-      ) {
-        velocityRef.current *= -0.6; // Invierte y reduce la velocidad al chocar con los bordes
-      }
+      // // Rebote suave cuando alcanza los límites
+      // if (
+      //   translateXRef.current >= bounds.max ||
+      //   translateXRef.current <= bounds.min
+      // ) {
+      //   velocityRef.current *= -0.6; // Invierte y reduce la velocidad al chocar con los bordes
+      // }
 
       refContainer.current.style.transform = `translateX(${translateXRef.current}px)`;
       animationFrameRef.current = requestAnimationFrame(animateWithFriction);
@@ -189,9 +190,12 @@ export const Courses = () => {
         style={{
           color: "var(--color-red-700)",
         }}
-        className="pb-3"
+        className={`pb-1 flex items-center col-gap-0-5 ${
+          isMobile ? "justify-center" : ""
+        }`}
       >
-        Conoce nuestros cursos
+        <GraduationCap size={isMobile ? 30 : 40} />
+        Nuestros cursos
       </Typography>
 
       <div className="cards-container" ref={refContainer}>

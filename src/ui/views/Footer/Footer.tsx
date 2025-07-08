@@ -6,7 +6,7 @@ import { SocialMedia } from "../../components/SocialMedia/SocialMedia";
 import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
 
 export const Footer = () => {
-  const { paddingHorizontal, paddingTop, paddingVertical } = useDeviceStyles();
+  const { paddingHorizontal, paddingTop } = useDeviceStyles();
 
   return (
     <div
@@ -33,7 +33,9 @@ export const Footer = () => {
             <Typography variant="h3">Contáctanos</Typography>
             <Contact />
 
-            <Typography>FIBEPECH@GMAIL.COM</Typography>
+            <a className="nav-link" href="mailto:contacto@fibepech.cl">CONTACTO@FIBEPECH.CL</a>
+
+            {/* <Typography></Typography> */}
           </div>
 
           <div className="flex flex-col row-gap-0-5 pb-1 ">
@@ -80,9 +82,7 @@ export const Footer = () => {
           borderTop: "1px solid #fff",
         }}
       >
-        <div
-          className={`${paddingHorizontal} ${paddingVertical} flex justify-end`}
-        >
+        <div className={`${paddingHorizontal} py-1 flex justify-end`}>
           <Typography>FIBEPECH® 2025 Todos los derechos reservados.</Typography>
         </div>
       </div>

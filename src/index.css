@@ -65,7 +65,7 @@ body.menu-open {
 }
 
 .static-container {
-  height: 100%;
+  min-height: 80dvh;
   display: flex;
   flex-direction: column;
 }
@@ -115,7 +115,7 @@ body.menu-open {
       min-width: 100px;
     }
 
-    & .menu-items-container {
+    .menu-items-container {
       display: flex;
       justify-content: center;
       flex: 1 1 auto;
@@ -196,12 +196,12 @@ svg {
   color: inherit;
 }
 
-.typography-header {
-  font-size: 4.375rem;
+/* .typography-header {
+  font-size: 60px;
   font-weight: 600;
   line-height: 5.25rem;
   letter-spacing: -0.0625rem;
-}
+} */
 
 .typography-h1 {
   font-size: 3rem;
@@ -225,13 +225,13 @@ svg {
 .typography-body {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.75rem;
+  line-height: 16px;
 }
 
 .typography-thin {
   font-size: 1rem;
   font-weight: 100;
-  line-height: 1.75rem;
+  line-height: 28px;
 }
 
 .typography-small {
@@ -270,26 +270,28 @@ svg {
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-grow: 1;
   flex-shrink: 0;
+  /* min-height: 80dvh; */
   /* height: 100dvh; */
-  height: 80dvh;
+  /* height: 80dvh; */
   /* align-items: flex-end; */
 }
 
 .carrusel-header-container {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
+  flex-grow: 1;
 
   & .carrusel-header-item {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
-    flex-grow: 1;
-    flex-shrink: 0;
+    /* flex-grow: 1; */
+    /* flex-shrink: 0; */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -303,7 +305,7 @@ svg {
       justify-content: flex-end;
       flex-grow: 1; */
       /* row-gap: 2rem; */
-      max-width: 700px;
+      max-width: min(60%, 700px);
       position: relative;
       z-index: 1;
     }
@@ -361,6 +363,24 @@ svg {
   }
 }
 
+input {
+  border-width: 0;
+  padding: 0.75rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  border-radius: 0.375rem;
+  &:focus {
+    outline: 2px solid #82b0bc;
+  }
+
+  &[type="button"] {
+    cursor: pointer;
+    background-color: var(--color-midnight-blue-700);
+    color: var(--color-midnight-blue-100);
+  }
+}
+
 /* cursos */
 
 .courses-container {
@@ -391,20 +411,25 @@ svg {
 }
 
 .card {
+  user-select: none;
   border-radius: 1rem;
   flex-shrink: 0;
   width: 350px;
   height: 500px;
   /* height: min(90%, 500px); */
-  transition: transform 0.25s ease;
+  transition: background 0.5s ease;
   user-select: none; /* Bloquea la selección de texto */
   -webkit-user-select: none; /* Para navegadores basados en WebKit (Safari/Chrome) */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none;
-
+  background-size: 200%;
+  background-position: 50% 50%;
   &:hover {
-    transform: scale(1.02);
-    background: inherit;
+    /* transform: scale(1.02); */
+    /* background: inherit;
+     */
+    background-size: 205%;
+    background-position: 60% 50%;
   }
 
   & .card-list-item {
@@ -419,11 +444,17 @@ svg {
 }
 
 .mobile-hamburger {
-  width: 24px;
-  height: 24px;
-  padding-bottom: 4px;
-  background-color: transparent;
-  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 0.125rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 0.25rem;
+
+  /* background-color: transparent; */
+  position: fixed;
   top: 10px;
   left: 10px;
   z-index: 200;
@@ -433,7 +464,7 @@ svg {
     display: block;
     position: absolute;
     height: 3px;
-    width: 100%;
+    width: calc(100% - 4px);
     background: var(--color-red-50);
     border-radius: 2px;
     transition: all 0.3s ease;
@@ -493,18 +524,18 @@ svg {
 
 .mobile-menu {
   border-top-right-radius: 1rem;
-  width: 100%;
+  width: min(100%, 350px);
   height: 100%;
   position: fixed;
   z-index: 100;
   transform: translateX(-100%);
   /* background-color: lab(0 0 0 / 0.5); */
 
-  background-color: #E1AD94;
+  background-color: #e1ad94;
 
   transition: transform 0.25s ease;
   &.active {
-    transform: translateX(-20%);
+    transform: translateX(0%);
   }
 }
 
@@ -530,6 +561,57 @@ svg {
 
 .carrusel-item.exiting {
   animation: slideOut 0.5s ease-in-out forwards;
+}
+
+.gallery {
+  /* overflow: scroll; */
+  scrollbar-color: var(--color-red-800) var(--color-red-600);
+  scrollbar-width: thin;
+}
+
+.gallery-item {
+  position: relative;
+  /* width: "300px"; */
+  /* height: "300px"; */
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-color: rgba(27 26 26 / 0.15);
+    transition: background-color 0.5s ease;
+  }
+  &:hover {
+    &::after {
+      background-color: transparent;
+    }
+  }
+
+  & img {
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .play-icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-brown-100);
+    /* opacity: 0; */
+    /* transition: opacity 0.25s ease; */
+    cursor: pointer;
+    /* &:hover {
+      opacity: 1;
+    } */
+  }
 }
 
 @keyframes slideIn {
@@ -568,6 +650,41 @@ svg {
 }
 
 @media screen and (max-width: 768px) {
+  .menu-items-container {
+    list-style-type: none;
+  }
+
+  .static-container {
+    min-height: 50dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .typography-h1 {
+    font-size: 2rem; /* 32px (desde 3rem/48px) */
+    line-height: 2.5rem; /* Ajuste proporcional */
+  }
+  .typography-h2 {
+    font-size: 1.5rem; /* 24px (desde 2.0625rem/33px) */
+    line-height: 2rem;
+  }
+  .typography-h3 {
+    font-size: 1rem; /* 16px (desde 1.25rem/20px) */
+    line-height: 1.5rem;
+  }
+  .typography-body {
+    font-size: 0.875rem; /* 14px (desde 1rem/16px) */
+    line-height: 1.25rem;
+  }
+  .typography-thin {
+    font-size: 0.875rem; /* 14px (desde 1rem/16px) */
+    line-height: 1.5rem;
+  }
+  .typography-small {
+    font-size: 0.75rem; /* 12px (desde 14px) */
+    line-height: 1rem;
+  }
+
   .desktop-menu {
     display: none;
   }

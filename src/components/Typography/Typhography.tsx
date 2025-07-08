@@ -3,13 +3,13 @@ import type { TypographyProps } from "./types";
 const Typography = ({
   children,
   className,
-  variant,
+  variant = "body",
   style,
   ...props
 }: TypographyProps) => {
   return (
     <span
-    style={style}
+      style={style}
       className={`typography typography-${variant} ${className}`}
       {...props}
     >

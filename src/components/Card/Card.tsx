@@ -9,8 +9,8 @@ export const Card = ({ item }: CardProps) => {
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(94, 64, 47, 0%) 0%, #160C07 100%),
         url(${item.image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
       }}
     >
       <div className="text-center flex-grow-1">
