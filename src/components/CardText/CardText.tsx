@@ -10,9 +10,8 @@ export const CardText = ({
 }: CardTextProps) => {
   return (
     <div
-      className={`card-text p-1 ${className}`}
+      className={`card-text ${className}`}
       style={{
-       
         ...style,
       }}
     >

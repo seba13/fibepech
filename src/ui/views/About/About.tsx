@@ -17,20 +17,31 @@ export const About = () => {
       flex flex-col row-gap-2`}
       style={{
         minWidth: 250,
-        backgroundColor: "var(--color-red-800)",
+        // backgroundColor: "var(--color-brown-100)",
+        backgroundColor: "var(--color-brown-100)",
       }}
     >
       <div className="flex flex-col row-gap-1">
         <Typography
-          variant="h1"
+          variant="h2"
           className={`color-primary flex items-center col-gap-0-5  ${
             isMobile ? "justify-center" : ""
           }`}
+          style={{
+            color: "var(--color-brown-950)",
+          }}
         >
           <School size={isMobile ? 30 : 40} /> ¿Quiénes somos?
         </Typography>
 
-        <Typography className="color-primary" style={{ maxWidth: 1600 }}>
+        <Typography
+          className="color-primary"
+          style={{
+            maxWidth: 1600,
+
+            color: "var(--color-brown-950)",
+          }}
+        >
           FIBEPECH (Fundación Integral de Barberos, Estilistas y Peluqueros
           Educando por Chile) es una organización sin fines de lucro dedicada a
           promover el desarrollo personal, profesional y social de los
@@ -52,11 +63,18 @@ export const About = () => {
         <div className="flex flex-col row-gap-3 flex-grow">
           <CardText style={{ maxWidth: 650 }}>
             <div className="flex flex-col row-gap-1">
-              <Typography variant="h1" className="color-primary">
+              <Typography
+                variant="h3"
+                className="color-primary"
+                style={{ color: "var(--color-brown-950)" }}
+              >
                 Nuestra visión
               </Typography>
 
-              <Typography className="color-primary">
+              <Typography
+                className="color-primary"
+                style={{ color: "var(--color-brown-950)" }}
+              >
                 Nuestra visión es ser una organización líder a nivel mundial en
                 la defensa y promoción de los derechos e intereses de
                 peluqueros, barberos y estilistas. Aspiramos a impulsar
@@ -76,11 +94,18 @@ export const About = () => {
 
           <CardText style={{ maxWidth: 650 }}>
             <div className="flex flex-col row-gap-1">
-              <Typography variant="h1" className="color-primary">
+              <Typography
+                variant="h3"
+                className="color-primary"
+                style={{ color: "var(--color-brown-950)" }}
+              >
                 Nuestra visión
               </Typography>
 
-              <Typography className="color-primary">
+              <Typography
+                className="color-primary"
+                style={{ color: "var(--color-brown-950)" }}
+              >
                 Nuestra visión es ser una organización líder a nivel mundial en
                 la defensa y promoción de los derechos e intereses de
                 peluqueros, barberos y estilistas. Aspiramos a impulsar

@@ -4,7 +4,7 @@ export interface IMenuItem {
   to: string;
 }
 
-export interface ICarruselItem {
+export interface ICarouselItem {
   id: string;
   image: string;
   title: string;

@@ -1,11 +1,16 @@
-import type { ICarruselItem } from "../../constants/types";
+import type { ICarouselItem } from "../../constants/types";
 
-// export interface CarruselHeaderProps {
-//   onBackgroundChange: (bgColor: string) => void;
-// }
-
-export interface CarruselItemProps {
-  item: ICarruselItem;
+export interface CarouselItemProps {
+  item: ICarouselItem;
   isActive: boolean;
   isNext: boolean;
+  index: number;
+  length: number;
+}
+
+export interface CarouselIndicatorProps {
+  activeIndex: number;
+  length: number;
+  onPressIndicator: (index:number)=>void
+
 }

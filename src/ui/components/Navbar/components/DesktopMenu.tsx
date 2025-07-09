@@ -55,7 +55,7 @@ export const DesktopMenu = ({ menuItems }: DesktopMenuProps) => {
 
   return (
     <>
-      <nav className={`desktop-menu px-4 ${scrolled ? "scrolled" : ""}`}>
+      <nav className={`desktop-menu  ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-container">
           <div className="left-nav">
             <a href="#">

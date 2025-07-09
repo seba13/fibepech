@@ -93,6 +93,8 @@ body.menu-open {
   }
 
   .nav-container {
+    padding-left: clamp(1rem, 5vw, 4rem);
+    padding-right: clamp(1rem, 5vw, 4rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -204,14 +206,14 @@ svg {
 } */
 
 .typography-h1 {
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-weight: 500;
   line-height: 3.75rem;
   letter-spacing: -0.0313rem;
 }
 
 .typography-h2 {
-  font-size: 2.0625rem;
+  font-size: 2.5rem;
   font-weight: 500;
   line-height: 2.75rem;
 }
@@ -305,7 +307,8 @@ svg {
       justify-content: flex-end;
       flex-grow: 1; */
       /* row-gap: 2rem; */
-      max-width: min(60%, 700px);
+      min-width: min(100%, 300px);
+      max-width: min(90%, 800px);
       position: relative;
       z-index: 1;
     }
@@ -383,12 +386,8 @@ input {
 
 /* cursos */
 
-.courses-container {
+.wrapper-courses-container {
   position: relative;
-  border-radius: 2rem;
-  /* min-height: min(100%, 900px); */
-  background-color: var(--color-brown-100);
-  overflow: hidden;
   &::after {
     content: "";
     position: absolute;
@@ -402,6 +401,15 @@ input {
   }
 }
 
+.courses-container {
+  position: relative;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  /* min-height: min(100%, 900px); */
+  background-color: var(--color-brown-100);
+  overflow: hidden;
+}
+
 .cards-container {
   display: flex;
   height: 100%;
@@ -411,10 +419,11 @@ input {
 }
 
 .card {
+  touch-action: pan-y;
   user-select: none;
   border-radius: 1rem;
   flex-shrink: 0;
-  width: 350px;
+  width: min(90%, 350px);
   height: 500px;
   /* height: min(90%, 500px); */
   transition: background 0.5s ease;
@@ -422,14 +431,14 @@ input {
   -webkit-user-select: none; /* Para navegadores basados en WebKit (Safari/Chrome) */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none;
-  background-size: 200%;
+  background-size: 215%;
   background-position: 50% 50%;
   &:hover {
     /* transform: scale(1.02); */
     /* background: inherit;
      */
-    background-size: 205%;
-    background-position: 60% 50%;
+    background-size: 220%;
+    background-position: 52% 50%;
   }
 
   & .card-list-item {
@@ -438,9 +447,13 @@ input {
 }
 
 .card-text {
-  background-color: var(--color-red-600);
+  background-color: var(--color-brown-50);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
   border-radius: 1rem;
   min-width: 500px;
+  padding: 1.25rem;
 }
 
 .mobile-hamburger {
@@ -524,7 +537,7 @@ input {
 
 .mobile-menu {
   border-top-right-radius: 1rem;
-  width: min(100%, 350px);
+  width: min(100%, 250px);
   height: 100%;
   position: fixed;
   z-index: 100;
@@ -565,7 +578,7 @@ input {
 
 .gallery {
   /* overflow: scroll; */
-  scrollbar-color: var(--color-red-800) var(--color-red-600);
+  scrollbar-color: var(--color-brown-50) var(--color-brown-950);
   scrollbar-width: thin;
 }
 
@@ -574,7 +587,7 @@ input {
   /* width: "300px"; */
   /* height: "300px"; */
   overflow: hidden;
-
+  border-radius: 0.5rem;
   &::after {
     content: "";
     position: absolute;
@@ -594,7 +607,7 @@ input {
     transition: transform 0.5s ease;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
   }
 
@@ -614,28 +627,7 @@ input {
   }
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOut {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-}
-
+/* Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -645,8 +637,40 @@ input {
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientTransition {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .fade-in {
-  animation: fadeIn 0.35s ease-in forwards;
+  animation: fadeIn 1s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {

@@ -90,6 +90,50 @@ const slides = [
     type: "image" as const,
     src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//imagen-clase.webp",
   },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//horario_hit_dance.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen-grupo.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen-grupo-2.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen-grupo-3.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen_grupo_4.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen_grupo_5.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//hit_dance_1.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//hit_dance_2.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//hit_dance_3.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//hit_dance_4.webp",
+  },
+  {
+    type: "image" as const,
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//hit_dance_5.webp",
+  },
 ];
 
 export const Gallery = () => {
@@ -107,6 +151,7 @@ export const Gallery = () => {
         {slides.map((slide, i) => {
           return (
             <div
+              key={`gallery-item-${i}`}
               className="gallery-item"
               style={{ width: isMobile ? "100%" : "300px" }}
             >
@@ -127,7 +172,6 @@ export const Gallery = () => {
                   height: "300px",
                   objectFit: "cover",
                   cursor: "pointer",
-                  borderRadius: "4px",
                 }}
               />
             </div>

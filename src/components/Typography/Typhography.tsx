@@ -9,9 +9,9 @@ const Typography = ({
 }: TypographyProps) => {
   return (
     <span
-      style={style}
       className={`typography typography-${variant} ${className}`}
       {...props}
+      style={style}
     >
       {children}
     </span>

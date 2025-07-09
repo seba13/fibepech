@@ -15,7 +15,7 @@ export const GalleryView = () => {
       flex flex-col row-gap-2`}
       style={{
         minWidth: 250,
-        backgroundColor: "var(--color-red-800)",
+        backgroundColor: "var(--color-brown-100)",
       }}
     >
       <div
@@ -24,8 +24,11 @@ export const GalleryView = () => {
         }flex-grow row-gap-1`}
       >
         <Typography
-          variant="h1"
+          variant="h2"
           className="color-primary flex items-center col-gap-0-5"
+          style={{
+            color: "var(--color-brown-950)",
+          }}
         >
           <Images size={isMobile ? 30 : 40} /> GALERÍA
         </Typography>

@@ -33,7 +33,13 @@ export const Footer = () => {
             <Typography variant="h3">Contáctanos</Typography>
             <Contact />
 
-            <a className="nav-link" href="mailto:contacto@fibepech.cl">CONTACTO@FIBEPECH.CL</a>
+            <a
+              className="nav-link"
+              style={{ alignSelf: "flex-start" }}
+              href="mailto:contacto@fibepech.cl"
+            >
+              CONTACTO@FIBEPECH.CL
+            </a>
 
             {/* <Typography></Typography> */}
           </div>

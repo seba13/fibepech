@@ -182,26 +182,33 @@ export const Courses = () => {
 
   return (
     <div
-      className={`courses-container ${paddingLeft} ${paddingVertical}`}
-      id="courses"
+      className="wrapper-courses-container"
+      style={{
+        minWidth: 250,
+      }}
     >
-      <Typography
-        variant="h1"
-        style={{
-          color: "var(--color-red-700)",
-        }}
-        className={`pb-1 flex items-center col-gap-0-5 ${
-          isMobile ? "justify-center" : ""
-        }`}
+      <div
+        className={`courses-container ${paddingLeft} ${paddingVertical}`}
+        id="courses"
       >
-        <GraduationCap size={isMobile ? 30 : 40} />
-        Nuestros cursos
-      </Typography>
+        <Typography
+          variant="h2"
+          style={{
+            color: "var(--color-brown-950)",
+          }}
+          className={`pb-1 flex items-center col-gap-0-5 ${
+            isMobile ? "justify-center" : ""
+          }`}
+        >
+          <GraduationCap size={isMobile ? 30 : 40} />
+          Nuestros cursos
+        </Typography>
 
-      <div className="cards-container" ref={refContainer}>
-        {cardItems.map((item) => (
-          <Card item={item} key={`card-item-${item.id}`} />
-        ))}
+        <div className="cards-container" ref={refContainer}>
+          {cardItems.map((item) => (
+            <Card item={item} key={`card-item-${item.id}`} />
+          ))}
+        </div>
       </div>
     </div>
   );

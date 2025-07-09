@@ -4,9 +4,9 @@ export const Contact = () => {
   return (
     <div className={`flex col-gap-1`} style={{ color: "var(--text-color)" }}>
       {/* social media */}
-      <a href="tel:+5699999999" className="link link--primary phone-container">
+      <a href="tel:++56986029932" className="link link--primary phone-container">
         <PhoneCall className="icon-media" />
-        <span>+56 9 9999 9999</span>
+        <span>+56 9 8602 9932</span>
       </a>
     </div>
   );
