@@ -49,8 +49,10 @@ export const Gastronomy = () => {
           y significativa.
         </Typography>
 
-        <div className="flex col-gap-1 flex-wrap row-gap-1">
-          <div>
+        <div
+          className={`flex col-gap-1 row-gap-1  ${isMobile ? "flex-wrap" : ""}`}
+        >
+          <div className="min-w-250">
             <Typography
               variant="h3"
               className={`pb-1 flex items-center col-gap-0-5 ${
@@ -106,9 +108,13 @@ export const Gastronomy = () => {
             </div>
           </div>
 
-          <div style={{ overflow: "hidden" }}>
+          <div className="flex-grow min-w-250">
             <img
-              style={{ objectFit: "contain", borderRadius: 6 }}
+              style={{
+                objectFit: "contain",
+                borderRadius: 6,
+                display: "block",
+              }}
               className="max-w-full"
               src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_2.webp"
             />
