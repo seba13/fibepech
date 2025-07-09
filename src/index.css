@@ -561,10 +561,6 @@ input {
 
 .row-images {
 
-  & .dual-image {
-    max-height: 446px;
-    flex: 1 1 calc(50% - 1rem);
-  }
 }
 
 /* Animaciones */

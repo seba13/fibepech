@@ -120,11 +120,12 @@ export const Gastronomy = () => {
             <img
               alt="actividad curso de cocina"
               style={{
-                objectFit: "contain",
+                objectFit: "cover",
                 borderRadius: 6,
                 display: "block",
+                height: "100%",
                 width: "100%", // Añadido para asegurar el ancho completo
-                height: "auto", // Mantiene la proporción
+  
               }}
               src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_2.webp"
             />
@@ -133,11 +134,11 @@ export const Gastronomy = () => {
             <img
               alt="actividad curso de cocina"
               style={{
-                objectFit: "contain",
+                objectFit: "cover",
                 borderRadius: 6,
                 display: "block",
+                height: "100%",
                 width: "100%", // Añadido para asegurar el ancho completo
-                height: "auto", // Mantiene la proporción
               }}
               src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_1.webp"
             />
