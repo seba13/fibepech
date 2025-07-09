@@ -50,7 +50,9 @@ export const Gastronomy = () => {
         </Typography>
 
         <div
-          className={`flex col-gap-1 row-gap-1  ${isMobile ? "flex-wrap" : ""}`}
+          className={`flex pb-1 col-gap-1 row-gap-1  ${
+            isMobile ? "flex-wrap" : ""
+          }`}
         >
           <div className="min-w-250">
             <Typography
@@ -107,26 +109,36 @@ export const Gastronomy = () => {
               </ul>
             </div>
           </div>
-
-          <div className="flex-grow min-w-250 flex flex-col row-gap-1">
+        </div>
+        <div
+          className={`row-images flex row-gap-1 col-gap-1  ${
+            isMobile ? "flex-col" : ""
+          }`}
+          style={{ "--col-gap": "1rem" } as React.CSSProperties}
+        >
+          <div className="dual-image">
             <img
               alt="actividad curso de cocina"
               style={{
                 objectFit: "contain",
                 borderRadius: 6,
                 display: "block",
+                width: "100%", // Añadido para asegurar el ancho completo
+                height: "auto", // Mantiene la proporción
               }}
-              className="max-w-full"
               src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_2.webp"
             />
+          </div>
+          <div className="dual-image">
             <img
               alt="actividad curso de cocina"
               style={{
                 objectFit: "contain",
                 borderRadius: 6,
                 display: "block",
+                width: "100%", // Añadido para asegurar el ancho completo
+                height: "auto", // Mantiene la proporción
               }}
-              className="max-w-full"
               src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_1.webp"
             />
           </div>

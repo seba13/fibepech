@@ -145,6 +145,9 @@
 .max-w-full {
   max-width: 100%;
 }
+.max-w-1\/2 {
+  max-width: 50%;
+}
 
 /* Min Width */
 

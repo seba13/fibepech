@@ -559,6 +559,14 @@ input {
   }
 }
 
+.row-images {
+
+  & .dual-image {
+    max-height: 446px;
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   from {
@@ -704,7 +712,7 @@ input {
       list-style: none;
       display: flex;
       flex-direction: column;
-      row-gap: .25rem;
+      row-gap: 0.25rem;
       left: 0;
       transform: scaleY(0);
       top: 100%;
