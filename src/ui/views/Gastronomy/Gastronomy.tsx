@@ -49,7 +49,7 @@ export const Gastronomy = () => {
           y significativa.
         </Typography>
 
-        <div className="flex col-gap-1">
+        <div className="flex col-gap-1 flex-wrap row-gap-1">
           <div>
             <Typography
               variant="h3"
