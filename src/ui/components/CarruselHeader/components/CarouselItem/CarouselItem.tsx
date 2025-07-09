@@ -1,5 +1,4 @@
 import Typography from "../../../../../components/Typography/Typhography";
-import useDeviceDetect from "../../../../../hooks/useDeviceDetect";
 import { useDeviceStyles } from "../../../../../hooks/useDeviceStyles";
 import { Button } from "../../../Button/Button";
 import type { CarouselItemProps } from "../../types";
@@ -10,10 +9,10 @@ export const CarruselItem = ({
   // isNext,
   index,
 }: CarouselItemProps) => {
-  const { isMobile } = useDeviceDetect();
   const {
     paddingLeft,
     // paddingVertical,
+    isMobile,
     marginBottom,
   } = useDeviceStyles();
 
@@ -54,7 +53,7 @@ export const CarruselItem = ({
         <div className="flex flex-col info-carrusel-item">
           <Typography
             variant="h1"
-            className="mb-1"
+            className={`mb-1`}
             style={{
               color: item.colorPrimary,
             }}
@@ -70,24 +69,27 @@ export const CarruselItem = ({
             href={item.buttonLink}
             className={`${item.buttonClass} ${marginBottom}`}
           />
+          {/* mb-0-5 ${isMobile ? "carrusel-text-bg" : ""}  */}
 
-          <Typography
-            variant="h2"
-            style={{
-              color: item.colorPrimary,
-            }}
-            className="mb-0-5"
-          >
-            {item.subtitle}
-          </Typography>
+          <div className={`mb-0-5 ${isMobile ? "carrusel-text-bg" : ""}  `}>
+            <Typography
+              variant="h2"
+              style={{
+                color: item.colorPrimary,
+              }}
+              className="mb-0-5"
+            >
+              {item.subtitle}
+            </Typography>
 
-          <Typography
-            style={{
-              color: item.colorPrimary,
-            }}
-          >
-            {item.description}
-          </Typography>
+            <Typography
+              style={{
+                color: item.colorPrimary,
+              }}
+            >
+              {item.description}
+            </Typography>
+          </div>
         </div>
       </div>
     </div>

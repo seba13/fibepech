@@ -20,6 +20,7 @@ export const CarouselIndicator = ({
       {Array.from(new Array(length), (_, i) => i).map((index) => {
         return (
           <CarouselIndicatorItem
+            key={`Carousel-indicator-${index}`}
             isActive={index === activeIndex}
             onPress={() => onPressIndicator(index)}
           />

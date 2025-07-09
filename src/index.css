@@ -345,7 +345,7 @@ svg {
   background-color: #fff;
   text-decoration: none;
   border-radius: 1.25rem;
-  color: inherit;
+  color: var(--color-brown-700);
   text-decoration: none;
   width: max-content;
 
@@ -431,14 +431,10 @@ input {
   -webkit-user-select: none; /* Para navegadores basados en WebKit (Safari/Chrome) */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none;
-  background-size: 215%;
+  background-size: cover;
   background-position: 50% 50%;
   &:hover {
-    /* transform: scale(1.02); */
-    /* background: inherit;
-     */
-    background-size: 220%;
-    background-position: 52% 50%;
+    background-position: 55% 50%;
   }
 
   & .card-list-item {
@@ -456,8 +452,12 @@ input {
   padding: 1.25rem;
 }
 
+/* c38969
+9b6c52
+74503c */
+
 .mobile-hamburger {
-  background: rgba(255, 255, 255, 0.2);
+  background: #74503c36;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -540,7 +540,7 @@ input {
   width: min(100%, 250px);
   height: 100%;
   position: fixed;
-  z-index: 100;
+  z-index: 150;
   transform: translateX(-100%);
   /* background-color: lab(0 0 0 / 0.5); */
 
@@ -627,6 +627,28 @@ input {
   }
 }
 
+.list-item {
+  padding-left: 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &.list-item--disc {
+    position: relative;
+    list-style: none;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      left: 0;
+      border-radius: 50%;
+      background-color: var(--color-brown-700);
+    }
+  }
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   from {
@@ -676,6 +698,16 @@ input {
 @media screen and (max-width: 768px) {
   .menu-items-container {
     list-style-type: none;
+  }
+
+  .carrusel-text-bg {
+    padding-inline: 1rem;
+    padding-block: 0.25rem;
+    backdrop-filter: blur(1px) saturate(110%);
+    -webkit-backdrop-filter: blur(13px) saturate(110%);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
   }
 
   .static-container {

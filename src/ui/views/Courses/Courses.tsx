@@ -4,6 +4,7 @@ import Typography from "../../../components/Typography/Typhography";
 import { cardItems } from "../../constants/cardItems";
 import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
 import { GraduationCap } from "lucide-react";
+import { Gastronomy } from "../Gastronomy/Gastronomy";
 
 // Ajustes mejorados
 const FRICTION = 0.95; // Mayor fricción para frenar más rápido
@@ -193,12 +194,9 @@ export const Courses = () => {
       >
         <Typography
           variant="h2"
-          style={{
-            color: "var(--color-brown-950)",
-          }}
           className={`pb-1 flex items-center col-gap-0-5 ${
             isMobile ? "justify-center" : ""
-          }`}
+          } brown-700`}
         >
           <GraduationCap size={isMobile ? 30 : 40} />
           Nuestros cursos
@@ -210,6 +208,8 @@ export const Courses = () => {
           ))}
         </div>
       </div>
+
+      <Gastronomy />
     </div>
   );
 };

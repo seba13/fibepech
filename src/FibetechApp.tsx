@@ -4,7 +4,7 @@ import { MainRouter } from "./router/mainRouter";
 export const FibetechApp = () => {
   return (
     <>
-      <TransitionProvider transitionDuration={300}>
+      <TransitionProvider transitionDuration={300} animationDuration={15000}>
         <MainRouter />
       </TransitionProvider>
     </>

@@ -5,6 +5,7 @@ const Typography = ({
   className,
   variant = "body",
   style,
+  // color="brown-700",
   ...props
 }: TypographyProps) => {
   return (

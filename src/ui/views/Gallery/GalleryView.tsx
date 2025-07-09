@@ -4,19 +4,15 @@ import { Gallery } from "../../components/Gallery/Gallery";
 import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
 
 export const GalleryView = () => {
-  const { isMobile, paddingHorizontal, paddingVertical } = useDeviceStyles();
+  const { isMobile, paddingHorizontal, paddingBottom } = useDeviceStyles();
 
   return (
     <div
       id="gallery"
       className={`
       ${paddingHorizontal}
-      ${paddingVertical}
-      flex flex-col row-gap-2`}
-      style={{
-        minWidth: 250,
-        backgroundColor: "var(--color-brown-100)",
-      }}
+      ${paddingBottom}
+      flex flex-col row-gap-2 min-w-250 bg-brown-100`}
     >
       <div
         className={`flex flex-col ${
@@ -25,10 +21,7 @@ export const GalleryView = () => {
       >
         <Typography
           variant="h2"
-          className="color-primary flex items-center col-gap-0-5"
-          style={{
-            color: "var(--color-brown-950)",
-          }}
+          className="color-primary flex items-center col-gap-0-5 brown-700"
         >
           <Images size={isMobile ? 30 : 40} /> GALERÍA
         </Typography>
