@@ -21,9 +21,9 @@ export const Gastronomy = () => {
           variant="h2"
           className={`pb-1 flex items-center col-gap-0-5 ${
             isMobile ? "justify-center" : ""
-          } brown-700`}
+          } brown-700 text-center`}
         >
-          <CakeSlice size={isMobile ? 30 : 40} />
+          <CakeSlice size={isMobile ? 30 : 40} className="min-w-24" />
           Conoce nuestro curso de capación gastronómica
         </Typography>
 
@@ -108,8 +108,9 @@ export const Gastronomy = () => {
             </div>
           </div>
 
-          <div className="flex-grow min-w-250">
+          <div className="flex-grow min-w-250 flex flex-col row-gap-1">
             <img
+              alt="actividad curso de cocina"
               style={{
                 objectFit: "contain",
                 borderRadius: 6,
@@ -117,6 +118,16 @@ export const Gastronomy = () => {
               }}
               className="max-w-full"
               src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_2.webp"
+            />
+            <img
+              alt="actividad curso de cocina"
+              style={{
+                objectFit: "contain",
+                borderRadius: 6,
+                display: "block",
+              }}
+              className="max-w-full"
+              src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//cocina_1.webp"
             />
           </div>
         </div>

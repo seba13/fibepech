@@ -12,7 +12,7 @@ const MAX_VELOCITY = 30; // Velocidad máxima permitida
 const CONTAINER_PADDING = 16; // Padding del contenedor (ajustar según tu CSS)
 
 export const Courses = () => {
-  const { paddingLeft, paddingVertical, isMobile } = useDeviceStyles();
+  const { paddingHorizontal, paddingVertical, isMobile } = useDeviceStyles();
 
   const refContainer = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
@@ -182,16 +182,8 @@ export const Courses = () => {
   }, []);
 
   return (
-    <div
-      className="wrapper-courses-container"
-      style={{
-        minWidth: 250,
-      }}
-    >
-      <div
-        className={`courses-container ${paddingLeft} ${paddingVertical}`}
-        id="courses"
-      >
+    <div className="w-full courses-container">
+      <div className={`${paddingHorizontal} ${paddingVertical} `} id="courses">
         <Typography
           variant="h2"
           className={`pb-1 flex items-center col-gap-0-5 ${
