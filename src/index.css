@@ -560,7 +560,6 @@ input {
 }
 
 .row-images {
-
 }
 
 /* Animaciones */
@@ -701,8 +700,26 @@ input {
     width: 100%;
     transition: 0.25s padding ease;
 
-    .nav-list {
+    .nav-list-container {
       position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      max-height: 0;
+      /* transform: scaleY(0); */
+      transform-origin: top;
+      overflow: hidden;
+      background-color: #472f22a2;
+      transition: max-height 0.265s ease-in-out;
+      z-index: 1000;
+
+      &.active {
+        max-height: var(--nav-list-height);
+      }
+    }
+
+    .nav-list {
+      /* position: absolute;
       width: 100%;
       padding: 1rem 1rem 2rem;
       list-style: none;
@@ -717,6 +734,16 @@ input {
       transition: transform 0.25s ease;
       transform-origin: top;
       &.active {
+        transform: scaleY(1);
+      } */
+
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.25rem;
+      padding: 1rem 1rem 2rem;
+
+      & .menu-item {
         transform: scaleY(1);
       }
     }

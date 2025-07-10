@@ -1,28 +1,40 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import type { MobileMenuProps } from "../types";
-// import { useDeviceStyles } from "../../../../hooks/useDeviceStyles";
 
 export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
-  // const { paddingTop, paddingLeft } = useDeviceStyles();
   const [scrolled, setScrolled] = useState(false);
-
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const navListContainerRef = useRef<HTMLDivElement>(null);
 
+  // Actualiza la variable CSS con la altura del menú
+  const updateMenuHeight = useCallback(() => {
+    if (navListContainerRef.current) {
+      const scrollHeight = navListContainerRef.current.scrollHeight;
+      navListContainerRef.current.style.setProperty(
+        "--nav-list-height",
+        `${scrollHeight}px`
+      );
+    }
+  }, []);
+
+  // Efecto para actualizar la altura cuando:
+  // - El menú se abre/cierra
+  // - Los items del menú cambian
+  // - La ventana se redimensiona
   useEffect(() => {
-    const updateNavHeight = () => {
+    updateMenuHeight();
+
+    const handleResize = () => {
+      updateMenuHeight();
+      // También actualizamos la altura del navbar como en tu código original
       const nav = document.querySelector(".mobile-menu");
       if (nav) {
-        // Calcula la altura real del navbar
         const height = (nav as HTMLElement).offsetHeight;
-
-        // Actualiza ambas variables
         document.documentElement.style.setProperty(
           "--nav-height",
           `${height}px`
         );
-
-        // Si quieres diferente altura al hacer scroll
-        const scrolledHeight = height * 0.8; // 80% del tamaño original
+        const scrolledHeight = height * 0.8;
         document.documentElement.style.setProperty(
           "--nav-height-scrolled",
           `${scrolledHeight}px`
@@ -30,26 +42,41 @@ export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
       }
     };
 
-    // Ejecutar al montar y cuando cambie el estado de scroll
-    updateNavHeight();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isOpenMenu, menuItems, updateMenuHeight]);
 
-    // También en redimensionamiento
-    window.addEventListener("resize", updateNavHeight);
-
-    return () => window.removeEventListener("resize", updateNavHeight);
-  }, [scrolled]);
-
+  // Efecto original para el navbar scroll
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+    const updateNavHeight = () => {
+      const nav = document.querySelector(".mobile-menu");
+      if (nav) {
+        const height = (nav as HTMLElement).offsetHeight;
+        document.documentElement.style.setProperty(
+          "--nav-height",
+          `${height}px`
+        );
+        const scrolledHeight = height * 0.8;
+        document.documentElement.style.setProperty(
+          "--nav-height-scrolled",
+          `${scrolledHeight}px`
+        );
       }
     };
 
+    updateNavHeight();
+    window.addEventListener("resize", updateNavHeight);
+    return () => window.removeEventListener("resize", updateNavHeight);
+  }, [scrolled]);
+
+  // Efecto original para detectar scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolled]);
+  }, []);
 
   const onPresMenu = useCallback(() => {
     setIsOpenMenu((prev) => !prev);
@@ -85,21 +112,24 @@ export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
           </span>
         </div>
 
-        <ul className={`nav-list ${isOpenMenu ? "active" : ""}`}>
-          {menuItems.map((item) => {
-            return (
+        <div
+          ref={navListContainerRef}
+          className={`nav-list-container ${isOpenMenu ? "active" : ""}`}
+        >
+          <ul className={`nav-list ${isOpenMenu ? "active" : ""}`}>
+            {menuItems.map((item) => (
               <li key={item.id} className="menu-item">
                 <a
                   href={item.to}
                   className="nav-link"
-                  style={{ fontWeight: 900, color: "fff", width: "100%" }}
+                  style={{ fontWeight: 900, width: "100%" }}
                 >
                   {item.title}
                 </a>
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        </div>
       </nav>
 
       <div className="nav-placeholder"></div>

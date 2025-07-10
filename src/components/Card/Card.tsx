@@ -30,6 +30,7 @@ export const Card = ({ item }: CardProps) => {
           textAlign: "center",
           fontSize: "1rem",
           fontWeight: 600,
+          minHeight: 72,
           backgroundColor: "var(--color-brown-100)",
         }}
         // href="#courses"
