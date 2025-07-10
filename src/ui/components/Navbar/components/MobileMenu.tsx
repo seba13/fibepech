@@ -66,7 +66,7 @@ export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
         <div className="left-nav">
           <a href="#">
             <img
-              src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//logo_1024.webp"
+              src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//logo_192x192.png"
               alt="logo"
               width="80"
               className="nav-logo"

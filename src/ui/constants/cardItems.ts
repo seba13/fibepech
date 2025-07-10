@@ -21,7 +21,7 @@ export const cardItems: ICardItem[] = [
     id: "2",
     title: "Cursos, talleres y servicios de Masoterapia",
     list: [
-      "Masajes de rela2jación",
+      "Masajes de relajación",
       "Drenajes linfáticos",
       "Masajes cérvico craneal",
       "Terapia de imanes",
