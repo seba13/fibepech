@@ -12,7 +12,7 @@ export const GalleryView = () => {
       className={`
       ${paddingHorizontal}
       ${paddingBottom}
-      flex flex-col row-gap-2 min-w-250 bg-brown-100`}
+      flex flex-col row-gap-2 min-w-250 bg-brown-50`}
     >
       <div
         className={`flex flex-col ${

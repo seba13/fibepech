@@ -31,7 +31,7 @@ export const Card = ({ item }: CardProps) => {
           fontSize: "1rem",
           fontWeight: 600,
           minHeight: 72,
-          backgroundColor: "var(--color-brown-100)",
+          backgroundColor: "var(--color-brown-50)",
         }}
         // href="#courses"
         value={item.title || "Próximamente"}
@@ -44,7 +44,7 @@ export const Card = ({ item }: CardProps) => {
             key={`item-list-${index}`}
           >
             <Typography
-              className="brown-100"
+              className="brown-50"
               style={{ pointerEvents: "none" }}
               // color="brown-100"
             >

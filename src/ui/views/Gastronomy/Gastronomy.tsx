@@ -15,7 +15,7 @@ export const Gastronomy = () => {
   const { paddingHorizontal, isMobile } = useDeviceStyles();
 
   return (
-    <div className={`${paddingHorizontal} bg-brown-100`}>
+    <div className={`${paddingHorizontal} bg-brown-50`}>
       <div className="flex-grow">
         <Typography
           variant="h2"
