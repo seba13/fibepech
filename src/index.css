@@ -700,7 +700,6 @@ input {
     width: 100%;
     transition: 0.25s padding ease;
 
-    
     .nav-list-container {
       position: absolute;
       top: 100%;
@@ -777,13 +776,28 @@ input {
   }
 
   .carrusel-text-bg {
-    padding-inline: 1rem;
+    /* padding-inline: 1rem;
     padding-block: 0.25rem;
     backdrop-filter: blur(1px) saturate(110%);
     -webkit-backdrop-filter: blur(13px) saturate(110%);
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    border: 1px solid rgba(255, 255, 255, 0.125); */
+  }
+
+  .carousel-item-mobile-overlay {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%; /* Ajusta según necesidad */
+      background: var(--overlayGradientMobile);
+      pointer-events: none; /* Permite interactuar con elementos debajo */
+    }
   }
 
   .static-container {
@@ -823,5 +837,10 @@ input {
 
   .card-text {
     min-width: 0;
+  }
+
+  .courses-container {
+    border-top-right-radius: 0rem;
+    border-top-left-radius: 0rem;
   }
 }

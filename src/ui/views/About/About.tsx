@@ -15,6 +15,7 @@ export const About = () => {
       ${paddingHorizontal}
       ${paddingVertical}
      min-w-250 bg-brown-50`}
+      style={{ position: "relative", zIndex: 10 }}
     >
       <div className={` flex flex-col row-gap-2`}>
         <div className="flex flex-col row-gap-1">

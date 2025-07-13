@@ -11,7 +11,11 @@ export const Footer = () => {
   return (
     <div
       className="text-color"
-      style={{ backgroundColor: "var(--color-brown-950)" }}
+      style={{
+        backgroundColor: "var(--color-brown-950)",
+        position: "relative",
+        zIndex: 10,
+      }}
     >
       <div
         className={`flex ${paddingHorizontal} ${paddingTop} pb-1  justify-start col-gap-3 row-gap-3 flex-wrap`}

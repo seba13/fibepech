@@ -17,6 +17,9 @@ export interface ICarouselItem {
   colorPrimary?: string;
   colorSecondary?: string;
   linearGradient: string;
+  overlayGradientMobile: string;
+  backgroundPositionMobile: string;
+  color700: string
 }
 
 export interface ICardItem {

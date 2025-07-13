@@ -32,21 +32,28 @@ export const CarruselItem = ({
           isActive ? "1s" : ".5s"
         } ease-in-out`,
         opacity: isActive ? 1 : 0,
+        ...(isMobile && {
+          backgroundImage: `linear-gradient(to bottom, transparent )`,
+        }),
       }}
     >
       <div
         // className={`carrusel-header-item ${paddingLeft} ${paddingVertical}`}
-        className={`carrusel-header-item ${paddingLeft} py-2`}
+        className={`carrusel-header-item ${paddingLeft} py-2 ${
+          isMobile ? "carousel-item-mobile-overlay" : ""
+        }`}
         style={{
           backgroundImage: `url(${item.image})`,
           backgroundSize: isMobile ? "auto 100%" : "auto 100%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right",
+          width: "100%",
           ...(isMobile && {
-            backgroundPosition: "12px 100%",
-            backgroundSize: "350px",
+            backgroundPosition: item.backgroundPositionMobile,
+            backgroundSize: "auto 100%",
             // backgroundColor: "#00000070",
-            backgroundImage: `url(${item.image}) `,
+            backgroundImage: `url(${item.image})`,
+            "--overlayGradientMobile": item.overlayGradientMobile,
           }),
         }}
       >
