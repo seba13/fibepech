@@ -17,19 +17,6 @@ export const slides = [
     width: 1280,
     height: 720,
     poster:
-      "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//poster-video-2.png",
-    sources: [
-      {
-        src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//video-2.mp4",
-        type: "video/mp4",
-      },
-    ],
-  },
-  {
-    type: "video" as const,
-    width: 1280,
-    height: 720,
-    poster:
       "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//poster-video-3.png",
     sources: [
       {
