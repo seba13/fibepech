@@ -28,7 +28,7 @@ export const GalleryView = () => {
           variant="h2"
           className="color-primary flex items-center col-gap-0-5 brown-700"
         >
-          <Images size={isMobile ? 30 : 40} /> GALERÍA
+          <Images size={isMobile ? 30 : 40} /> Galería
         </Typography>
 
         <Gallery />
