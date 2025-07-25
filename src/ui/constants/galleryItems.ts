@@ -4,10 +4,10 @@ export const slides = [
     width: 1280,
     height: 720,
     poster:
-      "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//poster-video-1.png",
+      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//poster-video-1.png",
     sources: [
       {
-        src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//video-1.mp4",
+        src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//video-1.mp4",
         type: "video/mp4",
       },
     ],
@@ -17,10 +17,10 @@ export const slides = [
     width: 1280,
     height: 720,
     poster:
-      "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//poster-video-3.png",
+      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//poster-video-3.png",
     sources: [
       {
-        src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//video-3.mp4",
+        src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//video-3.mp4",
         type: "video/mp4",
       },
     ],
@@ -30,10 +30,10 @@ export const slides = [
     width: 1280,
     height: 720,
     poster:
-      "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//poster-video-4.png",
+      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//poster-video-4.png",
     sources: [
       {
-        src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//video-4.mp4",
+        src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//video-4.mp4",
         type: "video/mp4",
       },
     ],
@@ -44,29 +44,29 @@ export const slides = [
     width: 1280,
     height: 720,
     poster:
-      "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//poster-video-5.png",
+      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//poster-video-5.png",
     sources: [
       {
-        src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//video-5.mp4",
+        src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//video-5.mp4",
         type: "video/mp4",
       },
     ],
   },
   {
     type: "image" as const,
-    src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//imagen-escuela.webp",
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen-escuela.webp",
   },
   {
     type: "image" as const,
-    src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//maniqui.webp",
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//maniqui.webp",
   },
   {
     type: "image" as const,
-    src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//imagen-diploma.webp",
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen-diploma.webp",
   },
   {
     type: "image" as const,
-    src: "https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//imagen-clase.webp",
+    src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//imagen-clase.webp",
   },
   {
     type: "image" as const,
