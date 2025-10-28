@@ -97,7 +97,7 @@ export const About = () => {
 
           <div className="max-h-600">
             <img
-              src="https://yfyexpycdnfgbrkxkbyz.storage.supabase.co/v1/object/public/static-assets//logo_1024.webp"
+              src="https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets/logo_1024.webp"
               style={{
                 width: "100%",
                 height: "100%",
