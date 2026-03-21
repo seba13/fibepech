@@ -5,6 +5,8 @@ import { MapGoogle } from "../../components/MapGoogle/MapGoogle";
 import { SocialMedia } from "../../components/SocialMedia/SocialMedia";
 import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer = () => {
   const { paddingHorizontal, paddingTop } = useDeviceStyles();
 
@@ -93,7 +95,9 @@ export const Footer = () => {
         }}
       >
         <div className={`${paddingHorizontal} py-1 flex justify-end`}>
-          <Typography>FIBEPECH® 2025 Todos los derechos reservados.</Typography>
+          <Typography>
+            FIBEPECH® {CURRENT_YEAR} Todos los derechos reservados.
+          </Typography>
         </div>
       </div>
     </div>

@@ -430,8 +430,8 @@ input {
   border-radius: 1rem;
   flex-shrink: 0;
   width: min(90%, 350px);
-  height: 500px;
-  /* height: min(90%, 500px); */
+  min-height: 500px;
+  height: auto;
   transition: background 0.5s ease;
   user-select: none; /* Bloquea la selección de texto */
   -webkit-user-select: none; /* Para navegadores basados en WebKit (Safari/Chrome) */
@@ -842,5 +842,75 @@ input {
   .courses-container {
     border-top-right-radius: 0rem;
     border-top-left-radius: 0rem;
+  }
+}
+
+/* ── Gastronomía: imágenes consistentes ─────────────────────────── */
+.row-images {
+  display: flex;
+  gap: 1rem;
+}
+
+.dual-image {
+  flex: 1;
+  min-height: 320px;
+  max-height: 420px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.dual-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Transición suave entre courses (oscuro) y gastronomía (claro) */
+.courses-container {
+  padding-bottom: 3rem;
+}
+
+/* ── Navbar: indicador de sección activa ─────────────────────────── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link--active {
+  font-weight: 600 !important;
+  color: var(--color-brown-50) !important;
+}
+
+.nav-link-indicator {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background-color: var(--color-brown-100);
+  border-radius: 2px;
+  animation: fadeIn 0.2s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .row-images {
+    flex-direction: column;
+  }
+
+  .dual-image {
+    min-height: 240px;
+    max-height: 300px;
+  }
+
+  .nav-link-indicator {
+    display: none;
+  }
+
+  .nav-link--active {
+    border-left: 3px solid var(--color-brown-100);
+    padding-left: 0.5rem;
   }
 }
