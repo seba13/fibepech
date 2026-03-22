@@ -65,7 +65,7 @@ export const cardItems: ICardItem[] = [
       "Elaboración de productos",
     ],
     image:
-      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//girl-hairdresser-3.webp",
+      "https://images.pexels.com/photos/3998415/pexels-photo-3998415.jpeg?_gl=1*1ourpy1*_ga*MTMwNTgwODA5OC4xNzc0MTQ5NDI4*_ga_8JE65Q40S6*czE3NzQxNDk0MjgkbzEkZzEkdDE3NzQxNDk0NDckajQxJGwwJGgw",
   },
   {
     id: "5",
@@ -80,6 +80,7 @@ export const cardItems: ICardItem[] = [
       "Ornamentación de pastelería",
       "Cocina institucional",
     ],
-    image: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//Confectionery-4.webp",
+    image:
+      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//Confectionery-4.webp",
   },
 ];

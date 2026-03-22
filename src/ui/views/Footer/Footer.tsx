@@ -1,105 +1,56 @@
-import { MapPin } from "lucide-react";
-import Typography from "../../../components/Typography/Typhography";
-import { Contact } from "../../components/Contact/Contact";
-import { MapGoogle } from "../../components/MapGoogle/MapGoogle";
-import { SocialMedia } from "../../components/SocialMedia/SocialMedia";
-import { useDeviceStyles } from "../../../hooks/useDeviceStyles";
+import { Instagram, Facebook, MapPin, Phone, Mail } from "lucide-react";
+import { IMAGES } from "../../../constants/assets";
 
-const CURRENT_YEAR = new Date().getFullYear();
+const NAV = [{l:"Inicio",h:"#home"},{l:"Cursos",h:"#courses"},{l:"Sobre nosotros",h:"#about"},{l:"Galería",h:"#gallery"},{l:"Contacto",h:"#contact"}];
+const COURSES = ["Estética","Masoterapia","Peluquería","Deportivo","Gastronomía"];
 
-export const Footer = () => {
-  const { paddingHorizontal, paddingTop } = useDeviceStyles();
-
-  return (
-    <div
-      className="text-color"
-      style={{
-        backgroundColor: "var(--color-brown-950)",
-        position: "relative",
-        zIndex: 10,
-      }}
-    >
-      <div
-        className={`flex ${paddingHorizontal} ${paddingTop} pb-1  justify-start col-gap-3 row-gap-3 flex-wrap`}
-      >
-        <div
-          className="flex-grow-1"
-          style={{
-            height: 350,
-            maxWidth: 700,
-            borderRadius: "1rem",
-            overflow: "hidden",
-          }}
-        >
-          <MapGoogle />
-        </div>
-
+export const Footer = () => (
+  <footer className="footer">
+    <div className="container">
+      <div className="footer-top">
         <div>
-          <div className="flex flex-col row-gap-0-5 pb-1">
-            <Typography variant="h3">Contáctanos</Typography>
-            <Contact />
-
-            <a
-              className="nav-link"
-              style={{ alignSelf: "flex-start" }}
-              href="mailto:contacto@fibepech.cl"
-            >
-              CONTACTO@FIBEPECH.CL
-            </a>
-
-            {/* <Typography></Typography> */}
+          <div className="f-logo">
+            <img src={IMAGES.logo} alt="FIBEPECH"/>
+            <span><span>FIBE</span>PECH</span>
           </div>
-
-          <div className="flex flex-col row-gap-0-5 pb-1 ">
-            <Typography variant="h3">Visítanos</Typography>
-
-            <div className="flex items-center col-gap-0-5">
-              <MapPin className="icon-media" />
-              <Typography>
-                Av. Gomez Carreño 666, Belloto norte, Quilpue
-              </Typography>
-            </div>
-          </div>
-
-          <div className="flex flex-col row-gap-0-5 items-start ">
-            <Typography variant="h3">SÍGUENOS EN NUESTRAS REDES</Typography>
-
-            <SocialMedia />
+          <p className="f-desc">Fundación Integral de Barberos, Estilistas y Peluqueros Educando por Chile</p>
+          <div className="f-stripe"/>
+          <div className="social-row" style={{marginTop:14}}>
+            <a href="https://instagram.com/fibepech" target="_blank" rel="noreferrer" className="social-btn"><Instagram size={14}/></a>
+            <a href="https://facebook.com/fibepech" target="_blank" rel="noreferrer" className="social-btn"><Facebook size={14}/></a>
           </div>
         </div>
-
         <div>
-          <div className="flex col-gap-0-5">
-            <div>
-              <img width="100" src={import.meta.env.VITE_LOGO} />
-            </div>
-
-            <div
-              className="flex flex-col  row-gap-0-5 "
-              style={{ maxWidth: 500 }}
-            >
-              <Typography variant="h3">FIBEPECH</Typography>
-
-              <Typography>
-                FUNDACIÓN INTEGRAL DE BARBEROS , ESTILISTAS Y PELUQUEROS
-                EDUCANDO POR CHILE.
-              </Typography>
-            </div>
-          </div>
+          <p className="f-col-t">Navegación</p>
+          <ul className="f-links">
+            {NAV.map(n=><li key={n.l}><a href={n.h}>{n.l}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <p className="f-col-t">Cursos</p>
+          <ul className="f-links">
+            {COURSES.map(c=><li key={c}><a href="#courses">{c}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <p className="f-col-t">Visítanos</p>
+          <ul className="f-links">
+            <li style={{display:"flex",alignItems:"flex-start",gap:6}}>
+              <MapPin size={11} style={{color:"var(--terra-l)",flexShrink:0,marginTop:1}}/> Av. Gómez Carreño 666, Belloto norte, Quilpué
+            </li>
+            <li style={{display:"flex",alignItems:"center",gap:6}}>
+              <Phone size={11} style={{color:"var(--terra-l)",flexShrink:0}}/> +56 9 8602 9932
+            </li>
+            <li style={{display:"flex",alignItems:"center",gap:6}}>
+              <Mail size={11} style={{color:"var(--terra-l)",flexShrink:0}}/> contacto@fibepech.cl
+            </li>
+          </ul>
         </div>
       </div>
-
-      <div
-        style={{
-          borderTop: "1px solid #fff",
-        }}
-      >
-        <div className={`${paddingHorizontal} py-1 flex justify-end`}>
-          <Typography>
-            FIBEPECH® {CURRENT_YEAR} Todos los derechos reservados.
-          </Typography>
-        </div>
+      <div className="footer-bot">
+        <span className="f-copy">FIBEPECH © 2026 · Todos los derechos reservados</span>
+        <div className="f-pol"><span>Términos</span><span>Privacidad</span></div>
       </div>
     </div>
-  );
-};
+  </footer>
+);

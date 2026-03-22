@@ -2,11 +2,11 @@ import { Header } from "../../views/Header/Header";
 import { Courses } from "../../views/Courses/Courses";
 import { About } from "../../views/About/About";
 import { Footer } from "../../views/Footer/Footer";
+import { GalleryView } from "../../views/Gallery/GalleryView";
 
 import { useEffect, useState } from "react";
 import { useTransition } from "../../../hooks/useTransition";
 import { carouselItems } from "../../constants/carruselItems";
-import { GalleryView } from "../../views/Gallery/GalleryView";
 
 export const StaticPage = () => {
   const [currBg, setCurrBg] = useState(carouselItems[0].linearGradient);
