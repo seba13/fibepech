@@ -260,9 +260,9 @@ export const Gallery = () => {
             >
               <ChevronRight size={20} />
             </button>
-            <div className="lb-counter">
+            {/* <div className="lb-counter">
               {lbIdx + 1} / {filtered.length}
-            </div>
+            </div> */}
             <div className="lb-dots">
               {filtered.map((_, i) => (
                 <div
