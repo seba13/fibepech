@@ -75,6 +75,22 @@ const COURSES = [
       "Preparaciones para celíacos",
     ],
   },
+  {
+    id: 6,
+    name: "Deportivos",
+    img: IMAGES.cardSports,
+    desc: "Actividades físicas orientadas al bienestar, la coordinación y el desarrollo integral del cuerpo.",
+    items: [
+      "Yoga",
+      "Defensa personal",
+      "Taichi",
+      "Baile",
+      "Baile entretenido",
+      "Zumba",
+      "Karate",
+      "Pausas activas",
+    ],
+  },
 ];
 const AUTO_INTERVAL = 4000;
 
@@ -188,7 +204,11 @@ export const Services = () => {
           </div>
 
           <div className="svc-vis">
-            <div className="svc-big" onClick={() => openModal(active)} style={{padding:10}}>
+            <div
+              className="svc-big"
+              onClick={() => openModal(active)}
+              style={{ padding: 10 }}
+            >
               <img
                 key={`img-${imgKey}`}
                 src={svc.img}

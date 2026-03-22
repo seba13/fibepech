@@ -14,8 +14,7 @@ export const IMAGES = {
   cardPelu: BASE + "girl-hairdresser-3.webp",
   cardGastro: BASE + "Confectionery-4.webp",
 
-  cardBabería:
-    "https://images.pexels.com/photos/3998415/pexels-photo-3998415.jpeg?_gl=1*1jn1djr*_ga*MTMwNTgwODA5OC4xNzc0MTQ5NDI4*_ga_8JE65Q40S6*czE3NzQxNTMwNjckbzIkZzEkdDE3NzQxNTMzMDUkajYwJGwwJGgw",
+  cardBabería: BASE + "imagen-barber.jpeg",
 
   // Gallery images
   escuela: BASE + "imagen-escuela.webp",
