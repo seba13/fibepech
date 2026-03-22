@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "error" | "ratelimit";
 
 export const Contact = () => {
   const [f, setF] = useState({
@@ -26,10 +26,15 @@ export const Contact = () => {
         body: JSON.stringify(f),
       });
 
-      // Verifica que sea JSON antes de parsear
-      const contentType = res.headers.get("content-type");
-      if (!contentType?.includes("application/json")) {
-        throw new Error("Respuesta inesperada del servidor");
+      // Verificar que sea JSON antes de parsear
+      const ct = res.headers.get("content-type") ?? "";
+      if (!ct.includes("application/json"))
+        throw new Error("Respuesta inesperada");
+
+      if (res.status === 429) {
+        setStatus("ratelimit");
+        setTimeout(() => setStatus("idle"), 10000);
+        return;
       }
 
       if (!res.ok) throw new Error("Error del servidor");
@@ -43,12 +48,15 @@ export const Contact = () => {
     }
   };
 
-  const btnLabel = {
+  const btnLabel: Record<Status, string> = {
     idle: "Enviar mensaje",
     sending: "Enviando...",
     sent: "¡Mensaje enviado! ✓",
     error: "Error, intenta de nuevo",
-  }[status];
+    ratelimit: "Demasiados intentos — espera unos minutos",
+  };
+
+  const isDisabled = status === "sending" || status === "ratelimit";
 
   return (
     <section className="contact-section section" id="contact">
@@ -125,14 +133,15 @@ export const Contact = () => {
             <button
               type="submit"
               className="btn btn-terra"
-              disabled={status === "sending"}
+              disabled={isDisabled}
               style={{
                 marginTop: 6,
                 alignSelf: "flex-start",
-                opacity: status === "sending" ? 0.7 : 1,
+                opacity: isDisabled ? 0.6 : 1,
               }}
             >
-              {btnLabel} {status === "idle" && <span className="btn-arrow" />}
+              {btnLabel[status]}{" "}
+              {status === "idle" && <span className="btn-arrow" />}
             </button>
           </form>
         </div>
