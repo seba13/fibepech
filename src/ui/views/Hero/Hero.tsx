@@ -710,7 +710,7 @@ const CHIPS = [
   "Barbería",
   "Gastronomía",
 ];
-const INTERVAL = 60000;
+const INTERVAL = 10000;
 const N = SLIDES.length;
 const mod = (n: number, m: number) => ((n % m) + m) % m;
 
