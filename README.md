@@ -24,7 +24,7 @@ Este repositorio contiene el código fuente del sitio web institucional, desarro
 | [React Router](https://reactrouter.com/) | ^7.6.3 | Navegación SPA |
 | [Lucide React](https://lucide.dev/) | ^0.525.0 | Íconos |
 | [React Photo Album](https://react-photo-album.com/) | ^3.1.0 | Galería de fotos |
-| [Yet Another React Lightbox](https://yet-another-react-lightbox.com/) | ^3.24.0 | Visor de imágenes |
+| [Yet Another React Lightbox](https://yet-another-react-lightbox.com/) | ^3.24.0 | Visor de imágenes
 
 ---
 
