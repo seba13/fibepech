@@ -669,10 +669,10 @@ const SLIDES = [
     id: 1,
     image: IMAGES.girl,
     label: "Estética",
-    title: "Transforma tu mirada con servicios",
-    highlight: "expertos",
-    subtitle: "en FIBEPECH",
-    desc: "Formación certificada en estética, peluquería, masoterapia y gastronomía.",
+    title: "Cursos De ",
+    highlight: "Estética",
+    subtitle: "En FIBEPECH",
+    desc: "Aprende técnicas profesionales de maquillaje, cuidado facial y manicura, o disfruta de tratamientos especializados. ¡Cuida de ti misma(o) con servicios que potencian tu confianza!",
     bgColor: "rgba(80,38,18,0.90)",
     gradient:
       "linear-gradient(135deg,#5C2E1A 0%,#8A4A35 35%,#B07060 65%,#C49080 100%)",
@@ -681,10 +681,10 @@ const SLIDES = [
     id: 2,
     image: IMAGES.yoga,
     label: "Bienestar",
-    title: "Relájate y renueva tu energía con",
-    highlight: "masoterapia",
-    subtitle: "y bienestar integral",
-    desc: "Terapias manuales para aliviar el estrés, reducir dolores y equilibrar cuerpo y mente.",
+    title: "Cursos Y Talleres De ",
+    highlight: "Masoterapia y Bienestar",
+    // subtitle: "y bienestar integral",
+    desc: "Terapias manuales y alternativas diseñadas para aliviar el estrés, reducir dolores y equilibrar tu cuerpo. Desde masajes hasta terapias con imanes, encuentra tu camino hacia el bienestar integral.",
     bgColor: "rgba(20,42,52,0.90)",
     gradient:
       "linear-gradient(135deg,#1A2E38 0%,#2A5060 35%,#407A80 65%,#5A9090 100%)",
@@ -693,10 +693,10 @@ const SLIDES = [
     id: 3,
     image: IMAGES.hairdresser,
     label: "Peluquería",
-    title: "Domina el arte del estilo y",
-    highlight: "peluquería",
-    subtitle: "profesional",
-    desc: "Desde cortes modernos hasta tratamientos capilares. Forma tu carrera con vanguardia.",
+    title: "Cursos De ",
+    highlight: "Peluquería Y Barbería",
+    subtitle: "Profesional",
+    desc: "Desde cortes modernos hasta tratamientos capilares rejuvenecedores. Domina técnicas de peinado, coloración o elaboración de productos naturales para un cabello saludable.",
     bgColor: "rgba(20,20,40,0.90)",
     gradient:
       "linear-gradient(135deg,#1A1A2E 0%,#2A2A50 35%,#3A4070 65%,#506090 100%)",
@@ -710,7 +710,7 @@ const CHIPS = [
   "Barbería",
   "Gastronomía",
 ];
-const INTERVAL = 6000;
+const INTERVAL = 60000;
 const N = SLIDES.length;
 const mod = (n: number, m: number) => ((n % m) + m) % m;
 
@@ -1177,8 +1177,8 @@ export const Hero = ({ onMenuOpen }: Props) => {
             </span>
           </div>
           <h1 className="hero-title">
-            {slide.title} <em>{slide.highlight}</em>
-            <br />
+            {slide.title} <em>{`${slide.highlight} `}</em>
+            {/* <br /> */}
             {slide.subtitle}
           </h1>
           <p className="hero-desc">{slide.desc}</p>

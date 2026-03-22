@@ -155,7 +155,7 @@ export const Services = () => {
             </h2>
           </div>
           <button className="more-link" onClick={() => openModal(active)}>
-            Ver detalle del curso <span className="btn-arrow" />
+            Ver cursos <span className="btn-arrow" />
           </button>
         </div>
 
@@ -342,7 +342,7 @@ export const Services = () => {
                     marginBottom: 10,
                   }}
                 >
-                  Contenidos
+                  Cursos incluidos
                 </p>
                 <div className="modal-items">
                   {modal.items.map((item) => (
@@ -380,7 +380,7 @@ export const Services = () => {
                   style={{ display: "inline-flex" }}
                   onClick={() => setModal(null)}
                 >
-                  Inscribirme en este curso <span className="btn-arrow" />
+                  Recibir mas información <span className="btn-arrow" />
                 </a>
               </div>
             </div>
