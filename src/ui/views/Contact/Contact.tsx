@@ -26,6 +26,12 @@ export const Contact = () => {
         body: JSON.stringify(f),
       });
 
+      // Verifica que sea JSON antes de parsear
+      const contentType = res.headers.get("content-type");
+      if (!contentType?.includes("application/json")) {
+        throw new Error("Respuesta inesperada del servidor");
+      }
+
       if (!res.ok) throw new Error("Error del servidor");
 
       setStatus("sent");
