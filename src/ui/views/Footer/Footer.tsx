@@ -1,5 +1,6 @@
 import { Instagram, Facebook, MapPin, Phone, Mail } from "lucide-react";
 import { IMAGES } from "../../../constants/assets";
+import { COURSES } from '../Services/constants';
 
 const NAV = [
   { l: "Inicio", h: "#home" },
@@ -8,13 +9,13 @@ const NAV = [
   { l: "Galería", h: "#gallery" },
   { l: "Contacto", h: "#contact" },
 ];
-const COURSES = [
-  "Estética",
-  "Masoterapia",
-  "Peluquería",
-  "Deportivo",
-  "Gastronomía",
-];
+// const COURSES = [
+//   "Estética",
+//   "Masoterapia",
+//   "Peluquería",
+//   "Deportivo",
+//   "Gastronomía",
+// ];
 
 export const Footer = () => (
   <footer className="footer">
@@ -65,8 +66,8 @@ export const Footer = () => (
           <p className="f-col-t">Cursos</p>
           <ul className="f-links">
             {COURSES.map((c) => (
-              <li key={c}>
-                <a href="#courses">{c}</a>
+              <li key={c.id}>
+                <a href="#courses">{c.name}</a>
               </li>
             ))}
           </ul>

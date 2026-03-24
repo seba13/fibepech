@@ -2,96 +2,97 @@ import { useState, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { IMAGES } from "../../../constants/assets";
 import { Portal } from "../../../components/Portal/Portal";
+import { COURSES } from "./constants";
 
-const COURSES = [
-  {
-    id: 1,
-    name: "Estética facial",
-    img: IMAGES.cardEstetica,
-    desc: "Aprende técnicas profesionales de maquillaje, cuidado facial y manicura.",
-    items: [
-      "Maquillaje profesional",
-      "Limpieza facial profunda",
-      "Manicure y Pedicure",
-      "Depilación",
-      "Podología",
-      "Belleza de cejas y pestañas",
-    ],
-  },
-  {
-    id: 2,
-    name: "Masoterapia",
-    img: IMAGES.cardMasso,
-    desc: "Terapias manuales diseñadas para aliviar el estrés y equilibrar tu cuerpo.",
-    items: [
-      "Masajes de relajación",
-      "Drenajes linfáticos",
-      "Masaje cérvico craneal",
-      "Reflexología",
-      "Flores de Bach",
-      "Piedras calientes",
-      "Masaje reductivo",
-    ],
-  },
-  {
-    id: 3,
-    name: "Peluquería",
-    img: IMAGES.cardPelu,
-    desc: "Domina técnicas de peinado, coloración y cuidado del cabello.",
-    items: [
-      "Peinados",
-      "Cortes dama y varón",
-      "Trenzas",
-      "Masaje capilar",
-      "Texturizado químico",
-      "Elaboración de productos",
-    ],
-  },
-  {
-    id: 4,
-    name: "Barbería",
-    img: IMAGES.cardBabería,
-    desc: "Técnicas modernas de barbería para el cuidado y estilo masculino.",
-    items: [
-      "Cortes modernos",
-      "Afeitado clásico",
-      "Diseño de barba",
-      "Tratamientos capilares",
-      "Barbería artística",
-    ],
-  },
-  {
-    id: 5,
-    name: "Gastronomía",
-    img: IMAGES.cardGastro,
-    desc: "Curso inclusivo de capacitación gastronómica para personas del espectro autista.",
-    items: [
-      "Pastelería",
-      "Panificación",
-      "Banquetería",
-      "Cocina institucional",
-      "Organización de eventos",
-      "Coctelería",
-      "Preparaciones para celíacos",
-    ],
-  },
-  {
-    id: 6,
-    name: "Deportivos",
-    img: IMAGES.cardSports,
-    desc: "Actividades físicas orientadas al bienestar, la coordinación y el desarrollo integral del cuerpo.",
-    items: [
-      "Yoga",
-      "Defensa personal",
-      "Taichi",
-      "Baile",
-      "Baile entretenido",
-      "Zumba",
-      "Karate",
-      "Pausas activas",
-    ],
-  },
-];
+// const COURSES = [
+//   {
+//     id: 1,
+//     name: "Estética",
+//     img: IMAGES.cardEstetica,
+//     desc: "Aprende técnicas profesionales de maquillaje, cuidado facial y manicura.",
+//     items: [
+//       "Maquillaje profesional",
+//       "Limpieza facial profunda",
+//       "Manicure y Pedicure",
+//       "Depilación",
+//       "Podología",
+//       "Belleza de cejas y pestañas",
+//     ],
+//   },
+//   {
+//     id: 2,
+//     name: "Masoterapia",
+//     img: IMAGES.cardMasso,
+//     desc: "Terapias manuales diseñadas para aliviar el estrés y equilibrar tu cuerpo.",
+//     items: [
+//       "Masajes de relajación",
+//       "Drenajes linfáticos",
+//       "Masaje cérvico craneal",
+//       "Reflexología",
+//       "Flores de Bach",
+//       "Piedras calientes",
+//       "Masaje reductivo",
+//     ],
+//   },
+//   {
+//     id: 3,
+//     name: "Peluquería",
+//     img: IMAGES.cardPelu,
+//     desc: "Domina técnicas de peinado, coloración y cuidado del cabello.",
+//     items: [
+//       "Peinados",
+//       "Cortes dama y varón",
+//       "Trenzas",
+//       "Masaje capilar",
+//       "Texturizado químico",
+//       "Elaboración de productos",
+//     ],
+//   },
+//   {
+//     id: 4,
+//     name: "Barbería",
+//     img: IMAGES.cardBabería,
+//     desc: "Técnicas modernas de barbería para el cuidado y estilo masculino.",
+//     items: [
+//       "Cortes modernos",
+//       "Afeitado clásico",
+//       "Diseño de barba",
+//       "Tratamientos capilares",
+//       "Barbería artística",
+//     ],
+//   },
+//   {
+//     id: 5,
+//     name: "Gastronomía",
+//     img: IMAGES.cardGastro,
+//     desc: "Curso inclusivo de capacitación gastronómica para personas del espectro autista.",
+//     items: [
+//       "Pastelería",
+//       "Panificación",
+//       "Banquetería",
+//       "Cocina institucional",
+//       "Organización de eventos",
+//       "Coctelería",
+//       "Preparaciones para celíacos",
+//     ],
+//   },
+//   {
+//     id: 6,
+//     name: "Deportivos",
+//     img: IMAGES.cardSports,
+//     desc: "Actividades físicas orientadas al bienestar, la coordinación y el desarrollo integral del cuerpo.",
+//     items: [
+//       "Yoga",
+//       "Defensa personal",
+//       "Taichi",
+//       "Baile",
+//       "Baile entretenido",
+//       "Zumba",
+//       "Karate",
+//       "Pausas activas",
+//     ],
+//   },
+// ];
 const AUTO_INTERVAL = 4000;
 
 export const Services = () => {

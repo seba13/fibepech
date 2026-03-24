@@ -663,6 +663,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight, Search, User, X } from "lucide-react";
 import { IMAGES } from "../../../constants/assets";
+import { COURSES } from "../Services/constants";
 
 const SLIDES = [
   {
@@ -703,13 +704,13 @@ const SLIDES = [
   },
 ];
 
-const CHIPS = [
-  "Estética",
-  "Peluquería",
-  "Masoterapia",
-  "Barbería",
-  "Gastronomía",
-];
+// const CHIPS = [
+//   "Estética",
+//   "Peluquería",
+//   "Masoterapia",
+//   "Barbería",
+//   "Gastronomía",
+// ];
 const INTERVAL = 10000;
 const N = SLIDES.length;
 const mod = (n: number, m: number) => ((n % m) + m) % m;
@@ -1208,8 +1209,8 @@ export const Hero = ({ onMenuOpen }: Props) => {
         <div className="hero-bottom">
           <div className="chips-col">
             <div className="chips-row">
-              {CHIPS.slice(0, 2).map((c) => (
-                <a key={c} href="#courses" className="chip">
+              {COURSES.slice(0, 2).map((c) => (
+                <a key={c.name} href="#courses" className="chip">
                   <span className="chip-check">
                     <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
                       <path
@@ -1221,13 +1222,13 @@ export const Hero = ({ onMenuOpen }: Props) => {
                       />
                     </svg>
                   </span>
-                  {c}
+                  {c.name}
                 </a>
               ))}
             </div>
             <div className="chips-row">
-              {CHIPS.slice(2).map((c) => (
-                <a key={c} href="#courses" className="chip">
+              {COURSES.slice(2).map((c) => (
+                <a key={c.name + c.id} href="#courses" className="chip">
                   <span className="chip-check">
                     <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
                       <path
@@ -1239,7 +1240,7 @@ export const Hero = ({ onMenuOpen }: Props) => {
                       />
                     </svg>
                   </span>
-                  {c}
+                  {c.name}
                 </a>
               ))}
             </div>
