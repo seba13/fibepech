@@ -12,61 +12,6 @@ FIBEPECH es una fundación que nace del compromiso de fortalecer el oficio de ba
 
 Este repositorio contiene el código fuente del sitio web institucional, desarrollado como una Single Page Application (SPA) moderna y responsiva.
 
----
-
-## 🚀 Stack tecnológico
-
-| Tecnología | Versión | Descripción |
-|---|---|---|
-| [React](https://react.dev/) | ^19.1.0 | Librería principal de UI |
-| [TypeScript](https://www.typescriptlang.org/) | ~5.8.3 | Tipado estático |
-| [Vite](https://vitejs.dev/) | ^7.0.0 | Build tool y dev server |
-| [React Router](https://reactrouter.com/) | ^7.6.3 | Navegación SPA |
-| [Lucide React](https://lucide.dev/) | ^0.525.0 | Íconos |
-| [React Photo Album](https://react-photo-album.com/) | ^3.1.0 | Galería de fotos |
-| [Yet Another React Lightbox](https://yet-another-react-lightbox.com/) | ^3.24.0 | Visor de imágenes |
-
----
-
-## 📁 Estructura del proyecto
-
-```
-fibepech/
-├── public/
-│   └── assets/
-│       ├── fonts/          # Tipografía Poppins (Light, Regular, Medium, SemiBold, Thin)
-│       └── images/         # Favicons
-├── src/
-│   ├── components/         # Componentes base reutilizables
-│   │   ├── Card/           # Tarjeta de curso
-│   │   ├── CardText/       # Tarjeta de texto
-│   │   └── Typography/     # Sistema tipográfico
-│   ├── hooks/              # Custom hooks (useDeviceStyles, etc.)
-│   ├── ui/
-│   │   ├── components/     # Componentes de UI específicos
-│   │   │   ├── CarruselHeader/   # Carrusel principal
-│   │   │   ├── Contact/          # Información de contacto
-│   │   │   ├── Gallery/          # Galería de imágenes
-│   │   │   ├── ListItem/         # Ítem de lista
-│   │   │   ├── MapGoogle/        # Mapa de ubicación
-│   │   │   ├── Navbar/           # Barra de navegación (Desktop + Mobile)
-│   │   │   └── SocialMedia/      # Redes sociales
-│   │   ├── constants/      # Datos estáticos (cursos, galería, menú, carrusel)
-│   │   ├── pages/          # Páginas de la app
-│   │   └── views/          # Secciones de la página principal
-│   │       ├── About/      # ¿Quiénes somos?
-│   │       ├── Contact/    # Contacto
-│   │       ├── Courses/    # Cursos y talleres
-│   │       ├── Footer/     # Pie de página
-│   │       ├── Gallery/    # Galería
-│   │       ├── Gastronomy/ # Sección gastronomía
-│   │       └── Header/     # Encabezado principal
-│   └── main.tsx            # Punto de entrada
-├── index.html
-├── package.json
-├── vite.config.ts
-└── tsconfig.json
-```
 
 ---
 
@@ -98,13 +43,7 @@ fibepech/
 npm install
 ```
 
-### Variables de entorno
 
-Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
-
-```env
-VITE_LOGO=<url_del_logo>
-```
 
 ### Desarrollo
 
