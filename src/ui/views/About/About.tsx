@@ -9,7 +9,8 @@ export const About = () => (
         <a href="#courses" className="btn btn-outline">Leer más <span className="btn-arrow"/></a>
       </div>
       <div className="about-photos">
-        <div className="aph tall"><img src={IMAGES.grupo1} alt="Grupo FIBEPECH"/></div>
+        <div className="aph tall"><img src={IMAGES.logo} alt="Grupo FIBEPECH"/></div>
+        <div className="aph "><img src={IMAGES.grupo1} alt="Grupo FIBEPECH"/></div>
         <div className="aph"><img src={IMAGES.clase} alt="Clase"/></div>
         <div className="aph-disc"><p>Descubre tu potencial</p>
         {/* <span>Galería de egresados</span> */}
