@@ -38,6 +38,9 @@ export const IMAGES = {
 };
 
 export const VIDEOS = {
+  v6: {
+    src: BASE + "video-6.mp4", poster: BASE + "poster-video-6.png"
+  },
   v1: { src: BASE + "video-1.mp4", poster: BASE + "poster-video-1.png" },
   v3: { src: BASE + "video-3.mp4", poster: BASE + "poster-video-3.png" },
   v4: { src: BASE + "video-4.mp4", poster: BASE + "poster-video-4.png" },

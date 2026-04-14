@@ -4,19 +4,6 @@ export const slides = [
     width: 1280,
     height: 720,
     poster:
-      "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets/inductora_manicurista.png",
-    sources: [
-      {
-        src: "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets/inductora_manicurista.mp4",
-        type: "video/mp4",
-      },
-    ],
-  },
-  {
-    type: "video" as const,
-    width: 1280,
-    height: 720,
-    poster:
       "https://yfyexpycdnfgbrkxkbyz.supabase.co/storage/v1/object/public/static-assets//poster-video-1.png",
     sources: [
       {
