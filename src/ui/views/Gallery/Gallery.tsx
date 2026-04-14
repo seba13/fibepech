@@ -24,29 +24,29 @@ const ALL_ITEMS: MediaItem[] = [
     tall: true,
     category: "Eventos",
   },
+
+  {
+    type: "image",
+    src: IMAGES.escuela,
+    alt: "Escuela",
+    category: "Cursos",
+    wide: true,
+    tall: true,
+  },
   {
     type: "video",
     src: VIDEOS.v1.src,
     poster: VIDEOS.v1.poster,
     alt: "Video clase",
-    wide: true,
-    tall: true,
+
     category: "Cursos",
   },
-  { type: "image", src: IMAGES.escuela, alt: "Escuela", category: "Cursos" },
   {
     type: "video",
     src: VIDEOS.v3.src,
     poster: VIDEOS.v3.poster,
     alt: "Video taller",
     category: "Talleres",
-  },
-  {
-    type: "image",
-    src: IMAGES.grupo1,
-    alt: "Grupo",
-    tall: true,
-    category: "Eventos",
   },
   { type: "image", src: IMAGES.clase, alt: "Clase", category: "Cursos" },
   {
@@ -56,7 +56,22 @@ const ALL_ITEMS: MediaItem[] = [
     alt: "Video evento",
     category: "Eventos",
   },
-  { type: "image", src: IMAGES.grupo2, alt: "Grupo 2", category: "Talleres" },
+  {
+    type: "image",
+    src: IMAGES.grupo1,
+    alt: "Grupo",
+    tall: false,
+    wide: true,
+    category: "Eventos",
+  },
+  {
+    type: "image",
+    src: IMAGES.grupo2,
+    alt: "Grupo 2",
+    wide: true,
+    tall: false,
+    category: "Talleres",
+  },
   { type: "image", src: IMAGES.diploma, alt: "Diploma", category: "Eventos" },
   {
     type: "image",
@@ -64,7 +79,6 @@ const ALL_ITEMS: MediaItem[] = [
     alt: "Hit Dance",
     category: "Talleres",
   },
-  { type: "image", src: IMAGES.grupo3, alt: "Grupo 3", category: "Talleres" },
   { type: "image", src: IMAGES.grupo4, alt: "Grupo 4", category: "Eventos" },
   {
     type: "video",
@@ -72,6 +86,14 @@ const ALL_ITEMS: MediaItem[] = [
     poster: VIDEOS.v5.poster,
     alt: "Video 5",
     category: "Cursos",
+  },
+  {
+    type: "image",
+    src: IMAGES.grupo3,
+    alt: "Grupo 3",
+    wide: true,
+    tall: false,
+    category: "Talleres",
   },
 ];
 
@@ -122,12 +144,9 @@ export const Gallery = () => {
               Nuestros <em>momentos</em>
             </h2>
           </div>
-          <button
-            className="more-link"
-            onClick={() => setFilter("Todo")}
-          >
+          {/* <button className="more-link" onClick={() => setFilter("Todo")}>
             Ver todo <span className="btn-arrow" />
-          </button>
+          </button> */}
         </div>
 
         <div className="gal-filters">
@@ -146,7 +165,7 @@ export const Gallery = () => {
           {filtered.map((item, i) => (
             <div
               key={`${filter}-${i}`}
-              className={`gi${item.wide && i < 2 ? " wide" : ""}${
+              className={`gi${item.wide ? " wide" : ""}${
                 item.tall ? " tall" : ""
               }`}
               onClick={() => setLbIdx(filtered.indexOf(item))}
@@ -252,7 +271,6 @@ export const Gallery = () => {
     </section>
   );
 };
-
 
 // import { useState, useEffect, useCallback } from "react";
 // import { ChevronLeft, ChevronRight, X } from "lucide-react";
