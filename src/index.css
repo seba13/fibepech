@@ -1234,6 +1234,9 @@ img {
   object-fit: cover;
   transition: transform 0.4s;
 }
+
+
+
 .gi:hover img {
   transform: scale(1.04);
 }
